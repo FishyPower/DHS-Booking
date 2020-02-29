@@ -16,7 +16,7 @@ def View_Booking(email, sort_type):
     elif sort_type=="event":
         bookings = c.execute('SELECT Start_Time, Meet_Who, Ref_Code FROM My_Booking ORDER BY Ref_Code, Start_Time')
         bookings = bookings.fetchall()
-        events = []
+        events = [] # --- "3D" array ---
         prev_refcode = ""
         for booking in bookings:
             if(len(events)==0 or booking[2]!=prev_refcode): # --- start adding a new event ---
